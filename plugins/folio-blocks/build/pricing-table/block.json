@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "folio/pricing-table",
+  "version": "0.1.0",
+  "title": "Pricing Table",
+  "category": "design",
+  "icon": "columns",
+  "description": "A responsive grid of pricing plans.",
+  "keywords": [
+    "pricing",
+    "plans",
+    "table"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "textdomain": "folio-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

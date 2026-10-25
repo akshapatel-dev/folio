@@ -1,0 +1,12 @@
+# Ignore everything in wp-content...
+/*
+
+# ...except the project files
+!.gitignore
+!README.md
+!themes/
+themes/*
+!themes/folio/
+!plugins/
+plugins/*
+!plugins/folio-blocks/

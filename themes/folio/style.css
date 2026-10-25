@@ -1,0 +1,326 @@
+/*
+Theme Name: Folio
+Description: A modern block theme for agencies and freelancers.
+Version: 1.0.0
+Requires at least: 6.5
+Requires PHP: 8.0
+Text Domain: folio
+*/
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding-block: 1rem;
+  background: var(--wp--preset--gradient--brand);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer {
+  position: relative;
+  padding-block: var(--wp--preset--spacing--50);
+  background: #0a0a18;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--wp--preset--gradient--brand);
+}
+body.admin-bar .site-header { top: 32px; }
+@media (max-width: 782px) {
+  body.admin-bar .site-header { top: 46px; }
+}
+
+/* .site-footer { */
+  /* margin-top: var(--wp--preset--spacing--60); */
+  /* padding-block: var(--wp--preset--spacing--50);
+  background: var(--wp--preset--color--dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+} */
+
+.site-header,
+.site-footer {
+  color: var(--wp--preset--color--light);
+}
+.site-header a,
+.site-footer a {
+  color: inherit;
+}
+.site-header a:hover,
+.site-footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.site-main {
+  padding-block: var(--wp--preset--spacing--50);
+}
+/* Hero */
+.folio-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+}
+.folio-hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 90%;
+  background: radial-gradient(60% 60% at 50% 0%, rgba(99, 102, 241, 0.45), transparent 70%);
+  z-index: -1;
+}
+.folio-eyebrow {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.folio-gradient-text {
+  background: var(--wp--preset--gradient--brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.folio-hero__lead {
+  max-width: 40rem;
+  margin-inline: auto;
+  color: rgba(255, 255, 255, 0.75);
+}
+.folio-hero .is-style-outline .wp-block-button__link {
+  background: transparent;
+  color: var(--wp--preset--color--light);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+.folio-hero .is-style-outline .wp-block-button__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+/* Remove the default gap between top-level blocks */
+.wp-site-blocks > * + * {
+  margin-block-start: 0;
+}
+
+.folio-hero__lead {
+  line-height: 1.5;
+}
+/* Sections */
+.folio-section__head {
+  margin-bottom: var(--wp--preset--spacing--50);
+  text-align: center;
+}
+.folio-label {
+  margin-bottom: 0.5rem;
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wp--preset--color--accent);
+}
+.folio-section__head p:not(.folio-label) {
+  max-width: 38rem;
+  margin-inline: auto;
+  color: var(--wp--preset--color--muted);
+}
+
+/* Cards */
+.folio-cards {
+  gap: 1.5rem;
+}
+.folio-card {
+  padding: 2rem;
+  background: var(--wp--preset--color--base);
+  border: 1px solid var(--wp--preset--color--border);
+  border-radius: 1.25rem;
+  box-shadow: var(--wp--preset--shadow--soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.folio-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--wp--preset--color--accent);
+  box-shadow: var(--wp--preset--shadow--lifted);
+}
+.folio-card__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 0.9rem;
+  background: var(--wp--preset--color--accent-soft);
+  color: var(--wp--preset--color--accent);
+  font-weight: 800;
+}
+.folio-card h3 {
+  margin-top: 0;
+}
+.folio-card p:last-child {
+  margin-bottom: 0;
+  color: var(--wp--preset--color--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .folio-card { transition: none; }
+  .folio-card:hover { transform: none; }
+}
+/* Full-width sections touch each other; spacing comes from their own padding */
+.wp-block-post-content > .alignfull {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+/* Pricing */
+.folio-pricing {
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.folio-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: var(--wp--preset--color--base);
+  border: 1px solid var(--wp--preset--color--border);
+  border-radius: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.folio-plan:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--wp--preset--shadow--soft);
+}
+.folio-plan.is-featured {
+  border-color: var(--wp--preset--color--accent);
+  box-shadow: var(--wp--preset--shadow--lifted);
+}
+.folio-plan__badge {
+  position: absolute;
+  top: -0.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  background: var(--wp--preset--gradient--brand);
+  color: var(--wp--preset--color--light);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.folio-plan__name {
+  margin: 0;
+  font-weight: 700;
+  color: var(--wp--preset--color--accent);
+}
+.folio-plan__price {
+  margin: 0.25rem 0 0;
+  font-size: var(--wp--preset--font-size--xx-large);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.folio-plan__note {
+  margin: 0 0 1.5rem;
+  color: var(--wp--preset--color--muted);
+}
+.folio-plan__features {
+  flex-grow: 1;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+.folio-plan__features li {
+  position: relative;
+  margin-bottom: 0.6rem;
+  padding-left: 1.75rem;
+}
+.folio-plan__features li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--wp--preset--color--accent);
+  font-weight: 800;
+}
+.folio-plan .is-style-outline .wp-block-button__link {
+  background: transparent;
+  color: var(--wp--preset--color--accent);
+  border: 1px solid var(--wp--preset--color--accent);
+  box-shadow: none;
+}
+.folio-plan .is-style-outline .wp-block-button__link:hover {
+  background: var(--wp--preset--color--accent-soft);
+}
+@media (prefers-reduced-motion: reduce) {
+  .folio-plan { transition: none; }
+  .folio-plan:hover { transform: none; }
+}
+/* Call to action */
+.folio-cta {
+  text-align: center;
+}
+.folio-cta p {
+  max-width: 36rem;
+  margin-inline: auto;
+  opacity: 0.9;
+}
+.folio-cta .wp-block-button__link:hover {
+  transform: translateY(-2px);
+}
+.folio-cta .wp-block-button__link {
+  transition: transform 0.2s ease;
+}
+.folio-cta p {
+  line-height: 1.5;
+}
+/* Pricing Plan block */
+.folio-pricing-grid {
+  gap: 1.5rem;
+}
+.folio-plan .wp-block-buttons,
+.folio-plan .wp-block-button,
+.folio-plan .wp-block-button__link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+/* Logo */
+.folio-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: inherit;
+  text-decoration: none;
+}
+.site-header .folio-logo:hover,
+.site-footer .folio-logo:hover {
+  text-decoration: none;
+}
+.folio-logo__mark {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: var(--wp--preset--gradient--brand);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+}
+.folio-logo__text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.folio-logo__text span {
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* Header with a gradient background: use a see-through white tile
+   so the logo mark does not disappear into the header */
+.site-header .folio-logo__mark {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}

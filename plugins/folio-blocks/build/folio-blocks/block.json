@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "folio/pricing-plan",
+  "version": "0.1.0",
+  "title": "Pricing Plan",
+  "category": "design",
+  "icon": "money-alt",
+  "description": "A pricing card with a price, feature list and button.",
+  "keywords": [
+    "pricing",
+    "plan",
+    "card"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "source": "html",
+      "selector": ".folio-plan__name",
+      "default": "Starter"
+    },
+    "price": {
+      "type": "string",
+      "source": "html",
+      "selector": ".folio-plan__price",
+      "default": "$499"
+    },
+    "note": {
+      "type": "string",
+      "source": "html",
+      "selector": ".folio-plan__note",
+      "default": "One landing page"
+    },
+    "features": {
+      "type": "string",
+      "default": "Responsive design\nContact form\nBasic SEO setup"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "badgeText": {
+      "type": "string",
+      "default": "Most popular"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Get started"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#contact"
+    }
+  },
+  "textdomain": "folio-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
