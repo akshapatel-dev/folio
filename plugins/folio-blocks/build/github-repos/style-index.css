@@ -1,0 +1,70 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/github-repos/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+.folio-repos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.folio-repo {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--wp--preset--color--base, #fff);
+  border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+  border-radius: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.folio-repo:hover {
+  transform: translateY(-4px);
+  border-color: var(--wp--preset--color--accent, #6366f1);
+  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.15);
+}
+
+.folio-repo__name {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+.folio-repo__name a {
+  color: inherit;
+  text-decoration: none;
+}
+.folio-repo__name a:hover {
+  color: var(--wp--preset--color--accent, #6366f1);
+}
+
+.folio-repo__desc {
+  flex-grow: 1;
+  margin: 0 0 1rem;
+  color: var(--wp--preset--color--muted, #64748b);
+  font-size: 0.95rem;
+}
+
+.folio-repo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  color: var(--wp--preset--color--muted, #64748b);
+  font-size: 0.85rem;
+}
+
+.folio-repos__notice {
+  text-align: center;
+  color: var(--wp--preset--color--muted, #64748b);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folio-repo {
+    transition: none;
+  }
+  .folio-repo:hover {
+    transform: none;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

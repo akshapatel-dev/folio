@@ -65,6 +65,51 @@ Basic SEO setup'
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
 	),
+	'github-repos' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'folio/github-repos',
+		'version' => '0.1.0',
+		'title' => 'GitHub Repositories',
+		'category' => 'widgets',
+		'icon' => 'editor-code',
+		'description' => 'Shows public repositories from the GitHub API.',
+		'keywords' => array(
+			'github',
+			'repositories',
+			'api'
+		),
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			)
+		),
+		'attributes' => array(
+			'username' => array(
+				'type' => 'string',
+				'default' => 'akshapatel-dev'
+			),
+			'count' => array(
+				'type' => 'number',
+				'default' => 6
+			),
+			'sortBy' => array(
+				'type' => 'string',
+				'default' => 'updated'
+			),
+			'hideForks' => array(
+				'type' => 'boolean',
+				'default' => true
+			)
+		),
+		'textdomain' => 'folio-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
+	),
 	'pricing-table' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,

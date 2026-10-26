@@ -28,3 +28,4 @@ function folio_folio_blocks_block_init() {
 	wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
 }
 add_action( 'init', 'folio_folio_blocks_block_init' );
+require_once plugin_dir_path( __FILE__ ) . 'includes/github-api.php';
