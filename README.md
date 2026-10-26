@@ -4,7 +4,6 @@ A modern WordPress **block theme** and a companion **custom blocks plugin**, bui
 
 Built by **Aksha Patel**.
 
-> Screenshots: add images of the homepage and the block editor here, for example `![Homepage](screenshots/home.png)`.
 
 ---
 
